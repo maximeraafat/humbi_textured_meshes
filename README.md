@@ -1,1 +1,3 @@
-# humbi_textured_meshes
+# Humbi Textured Meshes
+
+Repository in construction...
