@@ -1,0 +1,8 @@
+smplx/
+detectron2_repo/
+humbi_output/
+subject_*/
+
+**/.ipynb_checkpoints/
+**/__pycache__/
+**/.DS_Store
