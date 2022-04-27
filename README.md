@@ -8,7 +8,7 @@ NOTE THAT THIS REPOSITORY IS STILL IN CONSTRUCTION!
 
 The whole method can be run from the provided `humbi_textured_meshes.ipynb` notebook, either locally or on [Colab](link to colab notebook shared from my drive). No GPU is required, however we strongly recommend to run the notebook with GPU acceleration to speedup the optimization process.
 
-Download _SMPL-X models_ (`SMPLX_{MALE,FEMALE,NEUTRAL}.pkl`) from the [SMPL-X project](https://smpl-x.is.tue.mpg.de) page. If you run the notebook from Google Colab, move the `smplx/` folder to your Google Drive, and specify the path to your drive (the exact location where you moved the folder) at the top of the notebook. If you plan on running the notebook locally, move the `smplx/` folder inside of this repository (`humbi_textured_meshes/`), and run the notebook from within this repository.
+Download _SMPL-X models_ (`SMPLX_{MALE,FEMALE,NEUTRAL}.pkl`) and the corresponding _SMPL-X UV map_ from the [SMPL-X project](https://smpl-x.is.tue.mpg.de) page. Combine all the SMPL-X data inside a single `smplx/` folder. If you run the notebook from Google Colab, move the `smplx/` folder to your Google Drive, and specify the path to your drive (the exact location where you moved the folder) at the top of the notebook. If you plan on running the notebook locally, move the `smplx/` folder inside of this repository (`humbi_textured_meshes/`), and run the notebook from within this repository.
 
 If you want to run the method by executing the python scripts directly, first proceed witt the installations in the section below. You can then execute the basic neural rendering for subject 1 and 2 from [HUMBI](https://github.com/zhixuany/HUMBI) as an example with
 ```bash
