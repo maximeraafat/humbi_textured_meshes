@@ -56,12 +56,15 @@ def normalize_displacements(subjects:List[int], npz_path:str, save_folder:str, s
 
 
 ### Given the path to an image and the normalization range (min and max), compute the true displacements (inverse normalization)
-def denormalize_disp(path:str, glob_min:int, glob_max:int, smplx_uv_path:str):
+def denormalize_disp(path:str, glob_min:int, glob_max:int, smplx_uv_path:str=None):
     image = cv2.imread(path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     denorm_image = (image / 255.0) * (glob_max - glob_min) + glob_min
 
-    idx = torch.round(verts_uvs_positions(smplx_uv_path, image.shape[0])).cpu()
-    xyz_disps = denorm_image[idx[:,1].long(), idx[:,0].long()]
-
-    return denorm_image, xyz_disps
+    # return displacements (1) as image, and (2) as tensor of 3D displacements (per vertex) only if the smplx_uv_path is provided
+    if smplx_uv_path is None:
+        return denorm_image
+    else:
+        idx = torch.round(verts_uvs_positions(smplx_uv_path, image.shape[0])).cpu()
+        xyz_disps = denorm_image[idx[:,1].long(), idx[:,0].long()]
+        return denorm_image, xyz_disps
