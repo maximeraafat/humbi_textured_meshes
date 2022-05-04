@@ -2,7 +2,7 @@
 
 This repository provides a neural rendering method for constructing **textured deformed SMPL-X meshes** for subjects in the [HUMBI](https://github.com/zhixuany/HUMBI) dataset.
 
-<img src='images/subject_1.gif' width='350'/> <img src='images/subject_70.gif' width='350'/>
+<p align='center'> <img src='images/subject_1.gif' width='400'/> <img src='images/subject_70.gif' width='400'> </p>
 
 ## Demo and pre-installations
 
