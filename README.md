@@ -12,7 +12,7 @@ The whole method can be run from the provided `humbi_textured_meshes.ipynb` note
 
 Download _SMPL-X models_ (`SMPLX_{MALE,FEMALE,NEUTRAL}.pkl`) and the corresponding _SMPL-X UV map_ from the [SMPL-X project](https://smpl-x.is.tue.mpg.de) page. Combine all the SMPL-X data inside a single `smplx/` folder. If you run the notebook from Google Colab, move the `smplx/` folder to your Google Drive, and specify the path to your drive (the exact location where you moved the folder) at the top of the notebook. If you plan on running the notebook locally, move the `smplx/` folder inside of this repository (`humbi_textured_meshes/`), and run the notebook from within this repository.
 
-If you want to run the method by executing the python scripts directly, first proceed witt the installations in the section below. You can then execute the basic neural rendering for subject 1 and 2 from [HUMBI](https://github.com/zhixuany/HUMBI) as an example with
+If you want to run the method by executing the python scripts directly, first proceed with the installations in the section below. You can then execute the basic neural rendering for subject 1 and 2 from [HUMBI](https://github.com/zhixuany/HUMBI) as an example with
 ```bash
 python3 main.py --subjects '[1, 2]'
 ```
@@ -21,7 +21,7 @@ Further explanations on how to run the method with additional optional flags are
 
 ## Installations
 
-You can skip the following steps if you run the notebook on Google Colab.
+You can skip this section if you run the notebook on Google Colab.
 
 Clone this repository and install the dependencies with
 ```bash
@@ -33,7 +33,7 @@ and install the below packages
 - PyTorch3D : https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
 - Detectron2 : https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md
 
-Additionally, clone [Detectron2](https://github.com/facebookresearch/detectron2) (if not already done) inside of this repository (`humbi_textured_meshes/`)
+Additionally, clone [Detectron2](https://github.com/facebookresearch/detectron2) inside of this repository (`humbi_textured_meshes/`)
 ```bash
 git clone https://github.com/facebookresearch/detectron2.git detectron2_repo
 ```
@@ -49,7 +49,7 @@ pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/whee
 ```
 
 ## Apply textures onto SMPL-X mesh (in Blender)
-The output of the neural rendering consists of color appearance textures as well as displacement textures, which can be applied to a rigged SMPL-X mesh via a [Blender](https://www.blender.org) add-on (available to download on [SMPL-X project](https://smpl-x.is.tue.mpg.de) page). Once the SMPL-X mesh loaded in Blender, proceed as follows in order to apply the textures properly:
+The output of the neural rendering consists of color appearance textures as well as displacement textures, which can be applied to a rigged SMPL-X mesh via a [Blender](https://www.blender.org) add-on (available to download on the [SMPL-X project](https://smpl-x.is.tue.mpg.de) page). Once the SMPL-X mesh loaded in Blender, proceed as follows in order to apply the textures properly
 - Displacement texture map : _Activate Displace Modifier > New Texture (load texture file) > Coordinates : UV > Direction : RGB to XYZ_
 - RGB texture map : _Shader Editor > Load Image Texture (load texture file) > Plug in to Principled BSDF base color > Specular to 0.0 and Roughness to 1.0_
 
@@ -58,13 +58,3 @@ The output of the neural rendering consists of color appearance textures as well
 
 ## License
 This library is licensed under the MIT License. See the [LICENSE](LICENSE) file.
-
-
-<!--
-TODO
-
-* Remove tmp_docs folder (but keep tmp_files -> tmp folder)
-
-* Nice visualizations : images and gifs of reconstructed subjects -> see Term Paper Presentation material
-
--->
