@@ -73,6 +73,7 @@ def main():
     smplx_model = smplx.SMPLXLayer(smplx_model_path, gender='neutral').to(device)
 
     attributes = 'body'
+    humbi_root_url = open('humbi_root_url.txt', 'r').read().split()[0]
 
     rgb_saved = 0 # count how many rgb textures are saved
     for i, subject in enumerate(subjects):
@@ -82,7 +83,7 @@ def main():
             loaded = True
 
         if not exists:
-            loaded = download_subject(subject, [attributes])
+            loaded = download_subject(subject, [attributes], humbi_root_url)
 
         if loaded:
             if args.poses:

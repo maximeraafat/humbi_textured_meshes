@@ -6,7 +6,7 @@ import urllib.request as request
 
 
 ### Download attributes data for selected subject
-def download_subject(subject:int, attributes:List[str], root_url:str='https://humbi-dataset.s3.amazonaws.com'):
+def download_subject(subject:int, attributes:List[str], root_url:str):
     # possible attributes = ['body', 'body_texture', 'cloth', 'gaze', 'gaze_texture', 'face', 'face_texture', 'hand']
     output = False
     for attr in attributes:
